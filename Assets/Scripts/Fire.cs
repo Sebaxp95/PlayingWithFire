@@ -17,16 +17,24 @@ public class Fire : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        // If we have found a bomb trigger it
-        if (collision.gameObject.GetComponent<Bomb>() != null)
+        if (collision.gameObject.GetComponent<PowerUpSpawner>() != null)
+        {
+            // Make sure that the fire does not destroy the power up
+            GetComponent<CircleCollider2D>().enabled = false;
+            collision.gameObject.GetComponent<PowerUpSpawner>().SpawnPowerUp();
+        }
+        // Don't destroy other fires
+        else if (collision.gameObject.GetComponent<Fire>() != null)
+        {
+            return;
+        }
+        // If we have found a bomb, trigger it
+        else if (collision.gameObject.GetComponent<Bomb>() != null)
         {
             collision.gameObject.GetComponent<Bomb>().Explode();
         }
 
-        // Don't destroy other fires, destroy everything else
-        if (collision.gameObject.GetComponent<Fire>() == null)
-        {
-            Destroy(collision.gameObject);
-        }
+        // Remove the thing we collided with
+        Destroy(collision.gameObject);
     }
 }

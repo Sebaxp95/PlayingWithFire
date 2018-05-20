@@ -6,8 +6,8 @@ using UnityEngine;
 public class Bomb : MonoBehaviour {
 
     public GameObject fire;
-    public int firePower;
-    public int fuse; //time to explosion
+    internal int firePower;
+    internal float fuse; //time to explosion; internal -it won't be visible in the editor
     GameController gc;
     Vector3[] directions = new Vector3[]{ Vector3.up, Vector3.down, Vector3.left, Vector3.right};
 
