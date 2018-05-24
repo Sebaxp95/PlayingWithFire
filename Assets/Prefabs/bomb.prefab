@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4561992771999932}
   - component: {fileID: 212033368976284614}
   - component: {fileID: 61779646497009428}
-  - component: {fileID: 114622352607753436}
+  - component: {fileID: 114573455211008304}
   m_Layer: 0
   m_Name: bomb
   m_TagString: Untagged
@@ -58,7 +58,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &114622352607753436
+--- !u!114 &114573455211008304
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,11 +75,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1549081789596118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eac2d0f401dfe14ab7c30d066e2bb0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b83bcf15444cc84aa44a6b8e98635ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePower: 2
-  timeToExplode: 1
+  fire: {fileID: 1713864788112606, guid: 413b08b55376a344fa6f2464755fb51b, type: 2}
+  firePower: 0
+  fuse: 2
 --- !u!212 &212033368976284614
 SpriteRenderer:
   m_ObjectHideFlags: 1
