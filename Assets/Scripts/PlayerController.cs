@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : NetworkBehaviour {
 
     public float speed;
     private Rigidbody2D rb2d;
@@ -10,11 +11,20 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb2d = GetComponent<Rigidbody2D>();
-
+        if(!isLocalPlayer)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(!isLocalPlayer)
+        {
+            return;
+        }
+
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
