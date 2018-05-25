@@ -33,7 +33,12 @@ public class Fire : MonoBehaviour {
         {
             collision.gameObject.GetComponent<Bomb>().Explode();
         }
-
+        // If we have found a bomb, trigger it
+        else if (collision.gameObject.GetComponent<PlayerController>() != null)
+        {
+            collision.gameObject.GetComponent<PlayerController>().LoseLife();
+            return;
+        }
         // Remove the thing we collided with
         Destroy(collision.gameObject);
     }

@@ -93,6 +93,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  numberOfLives: 3
+  invulnerabilityDuration: 2
+  heart: {fileID: 1926306184322092, guid: 0c3da2867a94ec8449e28cca3ff68e71, type: 2}
 --- !u!114 &114880514878390168
 MonoBehaviour:
   m_ObjectHideFlags: 1
