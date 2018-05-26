@@ -19,6 +19,11 @@ public class Fire : MonoBehaviour {
     {
         if (collision.gameObject.GetComponent<PowerUpSpawner>() != null)
         {
+            if (collision.gameObject.GetComponent<StrongBox>() != null)
+            {
+                collision.gameObject.GetComponent<StrongBox>().CheckDestructionLevel();
+                return;
+            }
             // Make sure that the fire does not destroy the power up
             GetComponent<CircleCollider2D>().enabled = false;
             collision.gameObject.GetComponent<PowerUpSpawner>().SpawnPowerUp();

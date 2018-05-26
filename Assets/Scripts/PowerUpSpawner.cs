@@ -5,10 +5,11 @@ public class PowerUpSpawner : MonoBehaviour {
     public GameObject[] powerUps;
     public static int[] maxNumberOfPowerUps = { 5, 5, 5, 5, 2};
     static float randNumber = 0.3f;
+    public float additionalBonus;
 
     public void SpawnPowerUp()
     {
-        if(Random.Range(0f, 1f) < randNumber)
+        if(Random.Range(0f, 1f) < randNumber + additionalBonus)
         {
             int randomIndex = Random.Range(0, powerUps.Length);
             if(maxNumberOfPowerUps[randomIndex] > 0)
