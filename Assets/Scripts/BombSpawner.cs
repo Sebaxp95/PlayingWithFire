@@ -7,11 +7,19 @@ public class BombSpawner : NetworkBehaviour {
 
     public GameObject bomb;
 
-    public int firePower = 1;
+    public int defaultFirePower = 2;
+    public int defaulfNumberOfBombs = 1;
+    public int firePower = 2;
     public int numberOfBombs = 1;
     public int fuse = 2;
-	
-	void Update () {
+
+    public void SetDefaultValues()
+    {
+        firePower = defaultFirePower;
+        numberOfBombs = defaulfNumberOfBombs;
+    }
+
+    void Update () {
 
         if (!isLocalPlayer)
         {

@@ -6,8 +6,9 @@ public class PowerUp : MonoBehaviour
 {
     public int bombs;
     public int firePower;
-    public int speed;
-
+    public float speed;
+    public bool addLife;
+    public bool lostLife;
 
     GameController gameController;
     void Start()
@@ -27,6 +28,8 @@ public class PowerUp : MonoBehaviour
 
             // Adjust the values
             playerController.speed += speed;
+            if (addLife) playerController.AddLife();
+            if (lostLife) playerController.LoseLife(); 
             BombSpawner.numberOfBombs += bombs;
             BombSpawner.firePower += firePower;
 

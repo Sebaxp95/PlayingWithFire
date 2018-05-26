@@ -5,7 +5,9 @@ using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour {
 
+    public float defaultSpeed = 5;
     public float speed;
+
     private Rigidbody2D rb2d;
     [SerializeField]
     private int numberOfLives = 3;
@@ -35,6 +37,8 @@ public class PlayerController : NetworkBehaviour {
             this.isInvulnerable = true;
             Invoke("BecomeVulnerable", this.invulnerabilityDuration);
         }
+        this.GetComponent<BombSpawner>().SetDefaultValues();
+        speed = defaultSpeed;
     }
 
     private void BecomeVulnerable()
@@ -42,8 +46,17 @@ public class PlayerController : NetworkBehaviour {
         this.isInvulnerable = false;
     }
 
+    public void AddLife()
+    {
+        numberOfLives++;
+        GameObject playerLivesGrid = GameObject.Find("Lives");
+        GameObject lifeImage = Instantiate(heart, playerLivesGrid.transform) as GameObject;
+        this.lifeImages.Add(lifeImage);
+    }
+
     // Use this for initialization
     void Start () {
+        speed = defaultSpeed;
         rb2d = GetComponent<Rigidbody2D>();
         if(!isLocalPlayer)
         {
