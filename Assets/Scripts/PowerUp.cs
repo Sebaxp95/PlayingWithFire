@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PowerUp : MonoBehaviour
+public class PowerUp : NetworkBehaviour
 {
     public int bombs;
     public int firePower;

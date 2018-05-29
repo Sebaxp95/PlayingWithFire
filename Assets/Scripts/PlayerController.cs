@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : NetworkBehaviour {
 
@@ -24,7 +26,7 @@ public class PlayerController : NetworkBehaviour {
 
     public void LoseLife()
     {
-        if (!this.isInvulnerable)
+        if (!this.isInvulnerable && isLocalPlayer)
         {
             this.numberOfLives--;
             GameObject lifeImage = this.lifeImages[this.lifeImages.Count - 1];
@@ -32,14 +34,23 @@ public class PlayerController : NetworkBehaviour {
             this.lifeImages.RemoveAt(this.lifeImages.Count - 1);
             if (this.numberOfLives == 0)
             {
+                GameObject.Find("Text").GetComponent<Text>().enabled = true;
+                CmdDestroyObject(this.gameObject);
                 Destroy(this.gameObject);
             }
             this.isInvulnerable = true;
             Invoke("BecomeVulnerable", this.invulnerabilityDuration);
+            this.GetComponent<BombSpawner>().SetDefaultValues();
+            speed = defaultSpeed;
         }
-        this.GetComponent<BombSpawner>().SetDefaultValues();
-        speed = defaultSpeed;
+
     }
+
+    [Command]
+    private void CmdDestroyObject(GameObject o)
+    {
+        NetworkServer.Destroy(o);
+}
 
     private void BecomeVulnerable()
     {
@@ -48,20 +59,29 @@ public class PlayerController : NetworkBehaviour {
 
     public void AddLife()
     {
-        numberOfLives++;
-        GameObject playerLivesGrid = GameObject.Find("Lives");
-        GameObject lifeImage = Instantiate(heart, playerLivesGrid.transform) as GameObject;
-        this.lifeImages.Add(lifeImage);
+        if (isLocalPlayer)
+        {
+            numberOfLives++;
+            GameObject playerLivesGrid = GameObject.Find("Lives");
+            GameObject lifeImage = Instantiate(heart, playerLivesGrid.transform) as GameObject;
+            this.lifeImages.Add(lifeImage);
+        }
     }
 
     // Use this for initialization
     void Start () {
-        speed = defaultSpeed;
-        rb2d = GetComponent<Rigidbody2D>();
-        if(!isLocalPlayer)
+        if (!isLocalPlayer)
         {
             GetComponent<SpriteRenderer>().color = Color.red;
+            return;
         }
+    
+        NetworkManagerHUD hud = GameObject.Find("GameController").GetComponent<NetworkManagerHUD>();
+        if (hud != null)
+            hud.showGUI = false;
+        speed = defaultSpeed;
+        rb2d = GetComponent<Rigidbody2D>();
+            
         GameObject playerLivesGrid = GameObject.Find("Lives");
 
         this.lifeImages = new List<GameObject>();

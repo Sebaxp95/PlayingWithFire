@@ -9,8 +9,11 @@ public class BombSpawner : NetworkBehaviour {
 
     public int defaultFirePower = 2;
     public int defaulfNumberOfBombs = 1;
+    [SyncVar]
     public int firePower = 2;
+    [SyncVar]
     public int numberOfBombs = 1;
+    [SyncVar]
     public int fuse = 2;
 
     public void SetDefaultValues()
@@ -26,9 +29,6 @@ public class BombSpawner : NetworkBehaviour {
             return;
         }
 
-        //TODO: make sure we have moved more than 0.5 unit before we can drop another bomb
-        //TODO: refactor code
-
         if (Input.GetButtonDown("Jump") && numberOfBombs >= 1)
         {
             CmdSpawnBomb();
@@ -42,8 +42,8 @@ public class BombSpawner : NetworkBehaviour {
         var newBomb = Instantiate(bomb, spawnPos, Quaternion.identity) as GameObject;
         newBomb.GetComponent<Bomb>().firePower = firePower;
         newBomb.GetComponent<Bomb>().fuse = fuse;
-        numberOfBombs--;
         NetworkServer.Spawn(newBomb);
+        numberOfBombs--;
         Invoke("AddBomb", fuse);
     }
 

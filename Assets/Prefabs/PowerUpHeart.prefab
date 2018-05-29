@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212481030569424358}
   - component: {fileID: 58766313291173160}
   - component: {fileID: 114585107396548944}
+  - component: {fileID: 114115069192342628}
+  - component: {fileID: 114282765986991362}
   m_Layer: 0
   m_Name: PowerUpHeart
   m_TagString: Destroyable
@@ -57,6 +59,59 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &114115069192342628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195402033836752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 187
+    i1: 6
+    i2: 232
+    i3: 16
+    i4: 213
+    i5: 2
+    i6: 83
+    i7: 132
+    i8: 186
+    i9: 87
+    i10: 23
+    i11: 86
+    i12: 3
+    i13: 139
+    i14: 198
+    i15: 141
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114282765986991362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195402033836752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114585107396548944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,7 +126,8 @@ MonoBehaviour:
   bombs: 0
   firePower: 0
   speed: 0
-  life: 1
+  addLife: 1
+  lostLife: 0
 --- !u!212 &212481030569424358
 SpriteRenderer:
   m_ObjectHideFlags: 1

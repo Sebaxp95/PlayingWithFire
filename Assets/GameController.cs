@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.Networking;
 
 
-public class GameController : MonoBehaviour {
+public class GameController : NetworkBehaviour {
 
     public GameObject levelHolder;
     public const int X = 23;
@@ -11,6 +13,9 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Text text = GameObject.Find("Text").GetComponent<Text>();
+        text.enabled = false;
+        text.text = "Game over";
 
         var objects = levelHolder.GetComponentsInChildren<Transform>();
 

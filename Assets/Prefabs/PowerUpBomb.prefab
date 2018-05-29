@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212683729754853224}
   - component: {fileID: 58776402571240712}
   - component: {fileID: 114399476413411420}
+  - component: {fileID: 114264372113471866}
+  - component: {fileID: 114615432800416994}
   m_Layer: 0
   m_Name: PowerUpBomb
   m_TagString: Destroyable
@@ -57,6 +59,38 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &114264372113471866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979222867024790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 51
+    i1: 85
+    i2: 53
+    i3: 120
+    i4: 19
+    i5: 57
+    i6: 41
+    i7: 244
+    i8: 11
+    i9: 113
+    i10: 220
+    i11: 120
+    i12: 166
+    i13: 229
+    i14: 202
+    i15: 58
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114399476413411420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,6 +105,29 @@ MonoBehaviour:
   bombs: 1
   firePower: 0
   speed: 0
+  addLife: 0
+  lostLife: 0
+--- !u!114 &114615432800416994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979222867024790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!212 &212683729754853224
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -84,6 +141,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

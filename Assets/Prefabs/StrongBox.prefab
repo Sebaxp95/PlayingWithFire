@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4568669384204622}
   - component: {fileID: 212518192677837344}
+  - component: {fileID: 114769808825014222}
   - component: {fileID: 61734836657885534}
   - component: {fileID: 114832592056313806}
-  - component: {fileID: 114769808825014222}
+  - component: {fileID: 114916624573425362}
   m_Layer: 0
   m_Name: StrongBox
   m_TagString: Destroyable
@@ -79,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3746e14b47a2d4a8d766599a0a34bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestructionSprite: {fileID: 21300000, guid: 41a4cca021d82284b97aba7b4b0fa5cf, type: 3}
 --- !u!114 &114832592056313806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,6 +99,38 @@ MonoBehaviour:
   - {fileID: 1195402033836752, guid: bb06e810d5025384ba571756038bc68d, type: 2}
   - {fileID: 1687432905975120, guid: 967019976843ddd479598fd009e887c9, type: 2}
   additionalBonus: 0.5
+--- !u!114 &114916624573425362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1656237389392038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 21
+    i1: 166
+    i2: 176
+    i3: 28
+    i4: 45
+    i5: 159
+    i6: 253
+    i7: 148
+    i8: 170
+    i9: 103
+    i10: 142
+    i11: 89
+    i12: 114
+    i13: 233
+    i14: 207
+    i15: 47
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!212 &212518192677837344
 SpriteRenderer:
   m_ObjectHideFlags: 1

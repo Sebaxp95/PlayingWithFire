@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61698089869067956}
   - component: {fileID: 50530945610755560}
   - component: {fileID: 114585605465446246}
+  - component: {fileID: 114851955645373726}
   m_Layer: 0
   m_Name: wood
   m_TagString: Untagged
@@ -104,6 +105,40 @@ MonoBehaviour:
   - {fileID: 1455713791671192, guid: 55bbc102137e04141adc5195be2a59b3, type: 2}
   - {fileID: 1172676605759488, guid: dc65754dca496ad4a87196ae084bdb47, type: 2}
   - {fileID: 1195402033836752, guid: bb06e810d5025384ba571756038bc68d, type: 2}
+  - {fileID: 1687432905975120, guid: 967019976843ddd479598fd009e887c9, type: 2}
+  additionalBonus: 0
+--- !u!114 &114851955645373726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1016279901758470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 197
+    i1: 187
+    i2: 102
+    i3: 156
+    i4: 81
+    i5: 44
+    i6: 104
+    i7: 100
+    i8: 10
+    i9: 200
+    i10: 98
+    i11: 232
+    i12: 122
+    i13: 195
+    i14: 4
+    i15: 178
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!212 &212825991583631764
 SpriteRenderer:
   m_ObjectHideFlags: 1
