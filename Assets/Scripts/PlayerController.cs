@@ -81,7 +81,7 @@ public class PlayerController : NetworkBehaviour {
             hud.showGUI = false;
         speed = defaultSpeed;
         rb2d = GetComponent<Rigidbody2D>();
-            
+        GameObject.Find("GameController").GetComponent<GameController>().SetLevel();
         GameObject playerLivesGrid = GameObject.Find("Lives");
 
         this.lifeImages = new List<GameObject>();

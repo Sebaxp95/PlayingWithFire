@@ -7,10 +7,15 @@ public class StrongBox : MonoBehaviour {
     int level = 3;
     public Sprite DestructionSprite;
 
-    public void CheckDestructionLevel()
+    public bool CheckDestructionLevel()
     {
         level--;
         this.GetComponent<SpriteRenderer>().sprite = DestructionSprite;
-        if (level == 0) Destroy(this);
+        if (level == 0)
+        {
+            Destroy(this);
+            return false;
+        }
+        else return true;
     }
 }

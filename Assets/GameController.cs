@@ -21,13 +21,23 @@ public class GameController : NetworkBehaviour {
 
         foreach (var child in objects)
         {
-           
             level[(int)child.position.x, (int)child.position.y] = child.gameObject;
-            
         }
 
         level[0, 0] = null;
 	}
+
+    public void SetLevel()
+    {
+        var objects = levelHolder.GetComponentsInChildren<Transform>();
+
+        foreach (var child in objects)
+        {
+            level[(int)child.position.x, (int)child.position.y] = child.gameObject;
+        }
+
+        level[0, 0] = null;
+    }
 	
 
 }

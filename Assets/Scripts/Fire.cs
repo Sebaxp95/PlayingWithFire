@@ -21,7 +21,7 @@ public class Fire : MonoBehaviour {
         {
             if (collision.gameObject.GetComponent<StrongBox>() != null)
             {
-                collision.gameObject.GetComponent<StrongBox>().CheckDestructionLevel();
+                if (collision.gameObject.GetComponent<StrongBox>().CheckDestructionLevel())
                 return;
             }
             // Make sure that the fire does not destroy the power up

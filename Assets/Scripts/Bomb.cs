@@ -50,6 +50,7 @@ public class Bomb : NetworkBehaviour {
         x = Mathf.Clamp(x, 0, GameController.X - 1);
         y = Mathf.Clamp(y, 0, GameController.Y - 1);
 
+
         // If the square is free
         if (gc.level[x,y] == null && fire < firePower)
         {
