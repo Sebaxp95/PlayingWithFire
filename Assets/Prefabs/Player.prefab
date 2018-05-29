@@ -111,7 +111,7 @@ MonoBehaviour:
   bomb: {fileID: 1549081789596118, guid: ee5f64c4205812240b80fd4b94ee047e, type: 2}
   defaultFirePower: 2
   defaulfNumberOfBombs: 1
-  firePower: 5
+  firePower: 2
   numberOfBombs: 1
   fuse: 2
 --- !u!114 &114917727174745598
