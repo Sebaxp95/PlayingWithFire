@@ -3976,6 +3976,10 @@ Prefab:
       propertyPath: m_Name
       value: Box
       objectReference: {fileID: 0}
+    - target: {fileID: 1016279901758470, guid: c5bb669c512c68640ac862e87ac304b2, type: 2}
+      propertyPath: m_TagString
+      value: Destroyable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5bb669c512c68640ac862e87ac304b2, type: 2}
   m_IsPrefabParent: 0
